@@ -7,6 +7,7 @@
 //
 
 #import "LJRefreshView.h"
+#import "LJWangRefreshView.h"
 
 @interface LJRefreshView()
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
@@ -63,8 +64,10 @@
 //    LJHumanRefreshView
 //    LJRefreshView
 //    LJMeiRefreshView
-    UINib *nib = [UINib nibWithNibName:@"LJMeiRefreshView" bundle:nil];
-    return [nib instantiateWithOwner:nil options:nil][0];
+//    UINib *nib = [UINib nibWithNibName:@"LJMeiRefreshView" bundle:nil];
+//    return [nib instantiateWithOwner:nil options:nil][0];
+    return [[LJWangRefreshView alloc]init];
+    
 }
 
 @end

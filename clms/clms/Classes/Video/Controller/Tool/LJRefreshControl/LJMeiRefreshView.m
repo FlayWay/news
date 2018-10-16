@@ -50,7 +50,29 @@
     [self.earthIconView.layer addAnimation:anim forKey:nil];
     
     // 袋鼠
+    self.kangarooIconView.transform = CGAffineTransformMakeScale(0.2, 0.2);
+    self.kangarooIconView.layer.anchorPoint = CGPointMake(0.5, 1);
     
+    CGFloat centerX = self.bounds.size.width * 0.5;
+    CGFloat centerY = self.bounds.size.height  - 23;
+    self.kangarooIconView.center = CGPointMake(centerX, centerY);
+}
+
+- (void)setParentViewHeight:(CGFloat)parentViewHeight {
+    
+//    _parentViewHeight = parentViewHeight;
+    if (parentViewHeight < 23) {
+        return;
+    }
+    
+    CGFloat scale;
+    
+    if (parentViewHeight > 126) {
+        scale = 1;
+    }else {
+        scale = 1 - (126 - parentViewHeight) / (126 -23);
+    }
+    self.kangarooIconView.transform = CGAffineTransformMakeScale(scale, scale);
     
     
 }

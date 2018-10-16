@@ -10,4 +10,5 @@
 
 @interface LJMeiRefreshView : LJRefreshView
 
+
 @end

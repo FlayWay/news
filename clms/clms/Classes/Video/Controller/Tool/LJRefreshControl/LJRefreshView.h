@@ -12,6 +12,8 @@
 @interface LJRefreshView : UIView
 
 @property (nonatomic, assign) LJRefreshState refreshState;
+@property (nonatomic, assign) CGFloat parentViewHeight;
+
 
 +(LJRefreshView *)refreshView;
 

@@ -10,6 +10,7 @@
 #import "LJRefreshView.h"
 
 static CGFloat LJRefreshOffset = 60;
+//static CGFloat LJRefreshOffset = 126;
 
 @interface LJRefreshControl ()
 
@@ -99,11 +100,11 @@ static CGFloat LJRefreshOffset = 60;
         return;
     }
     
-//    // 传递父视图高度
-//    if (self.refreshView.refreshState != LJRefreshWillRefresh) {
-//
-//        self.refreshView.parentViewHeight = height;
-//    }
+    // 传递父视图高度
+    if (self.refreshView.refreshState != LJRefreshWillRefresh) {
+
+        self.refreshView.parentViewHeight = height;
+    }
     
     // 可以根据高度设置控件的frame
     self.frame = CGRectMake(0,
@@ -178,11 +179,11 @@ static CGFloat LJRefreshOffset = 60;
         return;
     }
     self.refreshView.refreshState = LJRefreshWillRefresh;
-     UIEdgeInsets inset = self.scrollView.contentInset;
+    
+    self.refreshView.parentViewHeight = LJRefreshOffset;
+    UIEdgeInsets inset = self.scrollView.contentInset;
     inset.top += LJRefreshOffset;
     self.scrollView.contentInset = inset;
-//    self.refreshView.parentViewHeight = LJRefreshOffset;
-    
 }
 
 /**
@@ -203,9 +204,11 @@ static CGFloat LJRefreshOffset = 60;
     }
     
     self.refreshView.refreshState = LJRefreshNormal;
-    UIEdgeInsets inset = self.scrollView.contentInset;
-    inset.top -= LJRefreshOffset;
-    self.scrollView.contentInset = inset;
+    [UIView animateWithDuration:0.25 animations:^{
+        UIEdgeInsets inset = self.scrollView.contentInset;
+        inset.top -= LJRefreshOffset;
+        self.scrollView.contentInset = inset;
+    }];
 }
 
 @end

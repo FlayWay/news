@@ -276,10 +276,12 @@
 
     // 滚动视图
     CGFloat offsetX = i * UIScreen.mainScreen.bounds.size.width;
-    [self.contentScrollView setContentOffset:CGPointMake(offsetX, 0) animated:true];
+    [self.contentScrollView setContentOffset:CGPointMake(offsetX, 0) animated:false];
+//    self.contentScrollView.contentOffset = CGPointMake(offsetX, 0);
     _selectedIndex = i;
     // 记录下表线位置
     _lastOffsetX = offsetX;
+    
     _isClickTitle = NO;
     
 }
@@ -417,11 +419,13 @@
         // 向右偏移
         offsetXInt = offsetX + screenWidth - extre;
         [self.contentScrollView setContentOffset:CGPointMake(offsetX, 0) animated:true];
+        
     }else if (extre < 0.5 * screenWidth && extre > 0) {
         
         // 向左偏移
         offsetX = offsetX - extre;
         [self.contentScrollView setContentOffset:CGPointMake(offsetX, 0) animated:true];
+        
     }
     
     // 标题偏移 取小标
@@ -432,6 +436,7 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
     
     // 获取偏移量
     CGFloat offsetX = scrollView.contentOffset.x;
@@ -578,5 +583,7 @@
         components[component] = resultingPixel[component] / 255.0f;
     }
 }
+
+
 
 @end
