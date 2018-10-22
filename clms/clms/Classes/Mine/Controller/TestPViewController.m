@@ -70,7 +70,7 @@
     self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewRrefresh)];
     [self.collectionView.mj_header beginRefreshing];
     self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreShops)];
-    
+     self.collectionView.footer.hidden = YES;
 }
 
 #pragma mark -- 刷新
@@ -114,6 +114,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
+    self.collectionView.footer.hidden = self.shops.count == 0;
     return self.shops.count;
 }
 
