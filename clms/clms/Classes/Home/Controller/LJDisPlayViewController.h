@@ -10,4 +10,6 @@
 
 @interface LJDisPlayViewController : BaseViewController
 
+- (void)rightBtnAction;
+
 @end

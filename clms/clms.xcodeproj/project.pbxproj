@@ -8,9 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0F88E51A01110A9A6A6B5F44 /* libPods-clms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A72BA8A2D28EF7AFE5FD0A95 /* libPods-clms.a */; };
+		86279D8B2179781D00EB464E /* 1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86279D8A2179781D00EB464E /* 1.plist */; };
+		86279D8E2179786600EB464E /* LJShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 86279D8D2179786600EB464E /* LJShopModel.m */; };
 		862B91DE2174659D0051F60D /* LJWangRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 862B91DD2174659D0051F60D /* LJWangRefreshView.m */; };
 		862B91E12174804F0051F60D /* LJDisPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 862B91E02174804F0051F60D /* LJDisPlayViewController.m */; };
 		862B91E4217483570051F60D /* TalkListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 862B91E3217483570051F60D /* TalkListViewController.m */; };
+		862B91E72175B7EE0051F60D /* PresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 862B91E62175B7EE0051F60D /* PresentViewController.m */; };
+		862B91EA2175CD520051F60D /* PresentFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 862B91E92175CD520051F60D /* PresentFlowLayout.m */; };
+		862B91ED2175D5C30051F60D /* PreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 862B91EC2175D5C30051F60D /* PreCell.m */; };
+		862B91F3217710D60051F60D /* TestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 862B91F2217710D60051F60D /* TestCell.m */; };
+		862B91F6217714FD0051F60D /* TestPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 862B91F5217714FD0051F60D /* TestPViewController.m */; };
+		862B91F9217715B70051F60D /* TestPFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 862B91F8217715B70051F60D /* TestPFlowLayout.m */; };
 		863D940D215A0DA500FBBC5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 863D940C215A0DA500FBBC5E /* AppDelegate.m */; };
 		863D9413215A0DA500FBBC5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863D9411215A0DA500FBBC5E /* Main.storyboard */; };
 		863D9415215A0DA800FBBC5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863D9414215A0DA800FBBC5E /* Assets.xcassets */; };
@@ -56,12 +64,27 @@
 
 /* Begin PBXFileReference section */
 		28165F11A9E0C0B63C2861DC /* Pods-clms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clms.release.xcconfig"; path = "Pods/Target Support Files/Pods-clms/Pods-clms.release.xcconfig"; sourceTree = "<group>"; };
+		86279D8A2179781D00EB464E /* 1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = 1.plist; sourceTree = "<group>"; };
+		86279D8C2179786600EB464E /* LJShopModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJShopModel.h; sourceTree = "<group>"; };
+		86279D8D2179786600EB464E /* LJShopModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJShopModel.m; sourceTree = "<group>"; };
 		862B91DC2174659D0051F60D /* LJWangRefreshView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJWangRefreshView.h; sourceTree = "<group>"; };
 		862B91DD2174659D0051F60D /* LJWangRefreshView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJWangRefreshView.m; sourceTree = "<group>"; };
 		862B91DF2174804F0051F60D /* LJDisPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJDisPlayViewController.h; sourceTree = "<group>"; };
 		862B91E02174804F0051F60D /* LJDisPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJDisPlayViewController.m; sourceTree = "<group>"; };
 		862B91E2217483570051F60D /* TalkListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TalkListViewController.h; sourceTree = "<group>"; };
 		862B91E3217483570051F60D /* TalkListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TalkListViewController.m; sourceTree = "<group>"; };
+		862B91E52175B7EE0051F60D /* PresentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentViewController.h; sourceTree = "<group>"; };
+		862B91E62175B7EE0051F60D /* PresentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentViewController.m; sourceTree = "<group>"; };
+		862B91E82175CD520051F60D /* PresentFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentFlowLayout.h; sourceTree = "<group>"; };
+		862B91E92175CD520051F60D /* PresentFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentFlowLayout.m; sourceTree = "<group>"; };
+		862B91EB2175D5C30051F60D /* PreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreCell.h; sourceTree = "<group>"; };
+		862B91EC2175D5C30051F60D /* PreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreCell.m; sourceTree = "<group>"; };
+		862B91F1217710D60051F60D /* TestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCell.h; sourceTree = "<group>"; };
+		862B91F2217710D60051F60D /* TestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCell.m; sourceTree = "<group>"; };
+		862B91F4217714FD0051F60D /* TestPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestPViewController.h; sourceTree = "<group>"; };
+		862B91F5217714FD0051F60D /* TestPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestPViewController.m; sourceTree = "<group>"; };
+		862B91F7217715B70051F60D /* TestPFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestPFlowLayout.h; sourceTree = "<group>"; };
+		862B91F8217715B70051F60D /* TestPFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestPFlowLayout.m; sourceTree = "<group>"; };
 		863D9408215A0DA500FBBC5E /* clms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		863D940B215A0DA500FBBC5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		863D940C215A0DA500FBBC5E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -309,8 +332,17 @@
 		863D9473215B399400FBBC5E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				86279D8A2179781D00EB464E /* 1.plist */,
 				863D9439215A3C7A00FBBC5E /* MineViewController.h */,
 				863D943A215A3C7A00FBBC5E /* MineViewController.m */,
+				862B91F4217714FD0051F60D /* TestPViewController.h */,
+				862B91F5217714FD0051F60D /* TestPViewController.m */,
+				86279D8C2179786600EB464E /* LJShopModel.h */,
+				86279D8D2179786600EB464E /* LJShopModel.m */,
+				862B91F1217710D60051F60D /* TestCell.h */,
+				862B91F2217710D60051F60D /* TestCell.m */,
+				862B91F7217715B70051F60D /* TestPFlowLayout.h */,
+				862B91F8217715B70051F60D /* TestPFlowLayout.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -322,6 +354,12 @@
 				863D9437215A3C6800FBBC5E /* TalkViewController.m */,
 				862B91E2217483570051F60D /* TalkListViewController.h */,
 				862B91E3217483570051F60D /* TalkListViewController.m */,
+				862B91E52175B7EE0051F60D /* PresentViewController.h */,
+				862B91E62175B7EE0051F60D /* PresentViewController.m */,
+				862B91E82175CD520051F60D /* PresentFlowLayout.h */,
+				862B91E92175CD520051F60D /* PresentFlowLayout.m */,
+				862B91EB2175D5C30051F60D /* PreCell.h */,
+				862B91EC2175D5C30051F60D /* PreCell.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -521,6 +559,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86279D8B2179781D00EB464E /* 1.plist in Resources */,
 				863D9418215A0DA800FBBC5E /* LaunchScreen.storyboard in Resources */,
 				863D9415215A0DA800FBBC5E /* Assets.xcassets in Resources */,
 				86D054C3216B438A001CC57F /* LJRefreshView.xib in Resources */,
@@ -599,8 +638,10 @@
 				863D9438215A3C6800FBBC5E /* TalkViewController.m in Sources */,
 				863D9463215B365E00FBBC5E /* UILabel+CZAddition.m in Sources */,
 				863D9435215A3C3A00FBBC5E /* VideoViewController.m in Sources */,
+				862B91F3217710D60051F60D /* TestCell.m in Sources */,
 				863D9467215B365E00FBBC5E /* NSObject+CZRuntime.m in Sources */,
 				863D9429215A230A00FBBC5E /* LJHttpManager+Extension.m in Sources */,
+				862B91ED2175D5C30051F60D /* PreCell.m in Sources */,
 				863D943B215A3C7A00FBBC5E /* MineViewController.m in Sources */,
 				863D9469215B365E00FBBC5E /* NSString+CZHash.m in Sources */,
 				862B91E12174804F0051F60D /* LJDisPlayViewController.m in Sources */,
@@ -613,8 +654,12 @@
 				86D054B621609DA5001CC57F /* TableViewController.m in Sources */,
 				863D943E215A3CC500FBBC5E /* MainTabBarController.m in Sources */,
 				863D9444215B1FE100FBBC5E /* NavigationBar.m in Sources */,
+				862B91E72175B7EE0051F60D /* PresentViewController.m in Sources */,
+				862B91EA2175CD520051F60D /* PresentFlowLayout.m in Sources */,
 				863D9466215B365E00FBBC5E /* UIButton+CZAddition.m in Sources */,
 				86D054AC215E0976001CC57F /* LJFlowLayout.m in Sources */,
+				86279D8E2179786600EB464E /* LJShopModel.m in Sources */,
+				862B91F9217715B70051F60D /* TestPFlowLayout.m in Sources */,
 				863D942F215A3B5C00FBBC5E /* BaseViewController.m in Sources */,
 				863D9441215B1CFE00FBBC5E /* NavigationController.m in Sources */,
 				863D9462215B365E00FBBC5E /* UIScreen+CZAddition.m in Sources */,
@@ -623,6 +668,7 @@
 				863D9465215B365E00FBBC5E /* NSString+CZPath.m in Sources */,
 				863D9464215B365E00FBBC5E /* NSString+CZBase64.m in Sources */,
 				863D9460215B365E00FBBC5E /* UIColor+CZAddition.m in Sources */,
+				862B91F6217714FD0051F60D /* TestPViewController.m in Sources */,
 				863D9468215B365E00FBBC5E /* UIViewController+CZAddition.m in Sources */,
 				863D946B215B365E00FBBC5E /* NSArray+Log.m in Sources */,
 				862B91E4217483570051F60D /* TalkListViewController.m in Sources */,
@@ -775,7 +821,7 @@
 				DEVELOPMENT_TEAM = 49HJAMKD2L;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/clms/PrefixHeader.pch";
 				INFOPLIST_FILE = clms/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -795,7 +841,7 @@
 				DEVELOPMENT_TEAM = 49HJAMKD2L;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/clms/PrefixHeader.pch";
 				INFOPLIST_FILE = clms/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

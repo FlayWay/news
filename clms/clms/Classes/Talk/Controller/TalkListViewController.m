@@ -8,7 +8,7 @@
 
 #import "TalkListViewController.h"
 #import "TableViewController.h"
-
+#import "PresentViewController.h"
 
 @interface TalkListViewController ()
 
@@ -34,7 +34,6 @@
     [self setupChildConrollers];
 }
 
-
 - (void)setupChildConrollers {
     
     [self.titlesArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -43,6 +42,12 @@
         vc.title = obj;
         [self addChildViewController:vc];
     }];
+}
+
+- (void)rightBtnAction {
+    
+    NSLog(@"弹框");
+    [self.navigationController presentViewController:[PresentViewController new] animated:true completion:nil];
 }
 
 @end

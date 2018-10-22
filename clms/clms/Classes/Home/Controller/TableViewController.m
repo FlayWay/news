@@ -12,7 +12,6 @@ static NSString *cellId = @"cellid";
 @interface TableViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 
-
 @end
 
 @implementation TableViewController
