@@ -14,7 +14,7 @@
 
 
 
-@interface TestPViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface TestPViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,TestPFlowLayoutDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
@@ -36,6 +36,7 @@
     if (!_collectionView) {
         
         TestPFlowLayout *flowLayout = [[TestPFlowLayout alloc]init];
+        flowLayout.delegate = self;
         _collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
        _collectionView.contentInset = UIEdgeInsetsMake(NavBarHeight, 0, 0, 0);
         _collectionView.delegate = self;
@@ -112,10 +113,23 @@
     return cell;
 }
 
+#pragma mark - <TestPFlowLayoutDelegate>
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
     self.collectionView.footer.hidden = self.shops.count == 0;
     return self.shops.count;
 }
+
+- (CGFloat)waterflowLayout:(TestPFlowLayout *)waterflowLayout heightForItemAtIndex:(NSUInteger)index itemWidth:(CGFloat)itemWidth {
+    
+    LJShopModel *shop = self.shops[index];
+    
+    return itemWidth * shop.h / shop.w;
+}
+
+- (CGFloat)columnCountInWaterflowLayout:(TestPFlowLayout *)waterflowLayout {
+    return 4;
+}
+
 
 @end

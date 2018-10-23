@@ -25,15 +25,45 @@ static const UIEdgeInsets LJDefaultEdgeMargin = {10, 10, 10, 10};
 
 @implementation TestPFlowLayout
 
-//完成布局前的初始工作
-//-(void)prepareLayout;
-//collectionView的内容尺寸
-//-(CGSize)collectionViewContentSize;
-//为每个item设置属性
-//-(UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath;
-//获取制定范围的所有item的属性
-//-(NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect;
-//-(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds;
+
+#pragma mark - 常见数据处理
+- (CGFloat)rowMargin
+{
+    if ([self.delegate respondsToSelector:@selector(rowMarginInWaterflowLayout:)]) {
+        return [self.delegate rowMarginInWaterflowLayout:self];
+    } else {
+        return LJDefaultRowMargin;
+    }
+}
+
+- (CGFloat)columnMargin
+{
+    if ([self.delegate respondsToSelector:@selector(columnMarginInWaterflowLayout:)]) {
+        return [self.delegate columnMarginInWaterflowLayout:self];
+    } else {
+        return LJDefaultColMargin;
+    }
+}
+
+- (NSInteger)columnCount
+{
+    if ([self.delegate respondsToSelector:@selector(columnCountInWaterflowLayout:)]) {
+        return [self.delegate columnCountInWaterflowLayout:self];
+    } else {
+        return LJDefaultColCount;
+    }
+}
+
+- (UIEdgeInsets)edgeInsets
+{
+    if ([self.delegate respondsToSelector:@selector(edgeInsetsInWaterflowLayout:)]) {
+        return [self.delegate edgeInsetsInWaterflowLayout:self];
+    } else {
+        return LJDefaultEdgeMargin;
+    }
+}
+
+
 
 - (NSMutableArray *)attrsArr {
     if (!_attrsArr) {
@@ -59,9 +89,9 @@ static const UIEdgeInsets LJDefaultEdgeMargin = {10, 10, 10, 10};
     
     // 清除以前计算的所有高度
     [self.columnHeights removeAllObjects];
-    for (NSInteger i=0; i<LJDefaultColCount; i++) {
+    for (NSInteger i=0; i<self.columnCount; i++) {
         
-        [self.columnHeights addObject:@(LJDefaultEdgeMargin.top)];
+        [self.columnHeights addObject:@(self.edgeInsets.top)];
     }
     // 清除之前所有的布局属性
     [self.attrsArr removeAllObjects];
@@ -95,8 +125,9 @@ static const UIEdgeInsets LJDefaultEdgeMargin = {10, 10, 10, 10};
     // 设置cell布局属性的frame
     CGFloat collectionW = self.collectionView.bounds.size.width;
    
-    CGFloat w = (collectionW - LJDefaultEdgeMargin.left - LJDefaultEdgeMargin.right - (LJDefaultColCount - 1) * LJDefaultColMargin) / LJDefaultColCount;
-    CGFloat h = 50 + arc4random_uniform(100);
+    CGFloat w = (collectionW - self.edgeInsets.left - self.edgeInsets.right - (self.columnCount - 1) * self.columnMargin) / self.columnCount;
+//    CGFloat h = 50 + arc4random_uniform(100);
+    CGFloat h = [self.delegate waterflowLayout:self heightForItemAtIndex:indexPath.item itemWidth:w];
     
     // 找出高度最短的呢一列
      NSInteger destColumn = 0;
@@ -111,11 +142,11 @@ static const UIEdgeInsets LJDefaultEdgeMargin = {10, 10, 10, 10};
             }
     }
     
-    CGFloat x = LJDefaultEdgeMargin.left + destColumn * (w + LJDefaultColMargin);
+    CGFloat x = self.edgeInsets.left + destColumn * (w + self.columnMargin);
     CGFloat y = minColumnHeight;
-    if (y != LJDefaultEdgeMargin.top) {
+    if (y != self.edgeInsets.top) {
         
-        y += LJDefaultRowMargin;
+        y += self.rowMargin;
     }
     layoutAttr.frame = CGRectMake(x, y,w, h);
     // 更新最短那列的高度
@@ -129,7 +160,7 @@ static const UIEdgeInsets LJDefaultEdgeMargin = {10, 10, 10, 10};
 - (CGSize)collectionViewContentSize {
     
     CGFloat maxColumnHeight = [self.columnHeights[0] doubleValue];
-    for (NSInteger i = 1; i < LJDefaultColCount; i++) {
+    for (NSInteger i = 1; i < self.columnCount; i++) {
         // 取得第i列的高度
         CGFloat columnHeight = [self.columnHeights[i] doubleValue];
         
@@ -137,7 +168,7 @@ static const UIEdgeInsets LJDefaultEdgeMargin = {10, 10, 10, 10};
             maxColumnHeight = columnHeight;
         }
     }
-    return CGSizeMake(0, maxColumnHeight + LJDefaultEdgeMargin.bottom);
+    return CGSizeMake(0, maxColumnHeight + self.edgeInsets.bottom);
 }
 
 @end
