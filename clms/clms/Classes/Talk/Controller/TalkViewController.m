@@ -20,6 +20,26 @@
     
     self.navItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"下一步" style:UIBarButtonItemStylePlain target:self action:@selector(nextAction)];
     
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(100, 100, 80, 40);
+    [btn setTitle:@"完成" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    btn.backgroundColor = [UIColor brownColor];
+    [self.view addSubview:btn];
+}
+
+- (void)btnClick:(UIButton *)btn {
+    
+    NSLog(@"%s------%@",__func__,btn);
+    btn.selected = !btn.selected;
+    if (btn.selected == YES) {
+        
+        [btn setTitle:@"编辑" forState:UIControlStateNormal];
+    }else {
+        
+        [btn setTitle:@"完成" forState:UIControlStateNormal];
+    }
 }
 
 - (void)nextAction {

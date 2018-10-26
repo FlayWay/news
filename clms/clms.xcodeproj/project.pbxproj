@@ -49,6 +49,10 @@
 		863D9481215B6BEE00FBBC5E /* UITabBar+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 863D9480215B6BEE00FBBC5E /* UITabBar+Extension.m */; };
 		863D9484215CA7ED00FBBC5E /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 863D9483215CA7ED00FBBC5E /* ChildViewController.m */; };
 		863D9487215CB31D00FBBC5E /* DisPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 863D9486215CB31D00FBBC5E /* DisPlayViewController.m */; };
+		86AE6FF62180172A00695804 /* CollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6FF52180172A00695804 /* CollectionHeaderView.m */; };
+		86AE6FF9218155BF00695804 /* LJPtModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6FF8218155BF00695804 /* LJPtModel.m */; };
+		86AE6FFC2182B23000695804 /* AddNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6FFB2182B23000695804 /* AddNormalCell.m */; };
+		86AE6FFF2182E6EE00695804 /* CollectionSpecialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6FFE2182E6EE00695804 /* CollectionSpecialView.m */; };
 		86D054A9215DF8FB001CC57F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D054A7215DF8FB001CC57F /* UIView+Extension.m */; };
 		86D054AC215E0976001CC57F /* LJFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D054AB215E0976001CC57F /* LJFlowLayout.m */; };
 		86D054B621609DA5001CC57F /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D054B521609DA5001CC57F /* TableViewController.m */; };
@@ -146,6 +150,14 @@
 		863D9485215CB31D00FBBC5E /* DisPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisPlayViewController.h; sourceTree = "<group>"; };
 		863D9486215CB31D00FBBC5E /* DisPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisPlayViewController.m; sourceTree = "<group>"; };
 		863D9488215CD4BD00FBBC5E /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		86AE6FF42180172A00695804 /* CollectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionHeaderView.h; sourceTree = "<group>"; };
+		86AE6FF52180172A00695804 /* CollectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionHeaderView.m; sourceTree = "<group>"; };
+		86AE6FF7218155BF00695804 /* LJPtModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJPtModel.h; sourceTree = "<group>"; };
+		86AE6FF8218155BF00695804 /* LJPtModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJPtModel.m; sourceTree = "<group>"; };
+		86AE6FFA2182B23000695804 /* AddNormalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddNormalCell.h; sourceTree = "<group>"; };
+		86AE6FFB2182B23000695804 /* AddNormalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddNormalCell.m; sourceTree = "<group>"; };
+		86AE6FFD2182E6EE00695804 /* CollectionSpecialView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionSpecialView.h; sourceTree = "<group>"; };
+		86AE6FFE2182E6EE00695804 /* CollectionSpecialView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionSpecialView.m; sourceTree = "<group>"; };
 		86D054A7215DF8FB001CC57F /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		86D054A8215DF8FB001CC57F /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		86D054AA215E0976001CC57F /* LJFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJFlowLayout.h; sourceTree = "<group>"; };
@@ -356,10 +368,18 @@
 				862B91E3217483570051F60D /* TalkListViewController.m */,
 				862B91E52175B7EE0051F60D /* PresentViewController.h */,
 				862B91E62175B7EE0051F60D /* PresentViewController.m */,
+				86AE6FFD2182E6EE00695804 /* CollectionSpecialView.h */,
+				86AE6FFE2182E6EE00695804 /* CollectionSpecialView.m */,
+				86AE6FF42180172A00695804 /* CollectionHeaderView.h */,
+				86AE6FF52180172A00695804 /* CollectionHeaderView.m */,
 				862B91E82175CD520051F60D /* PresentFlowLayout.h */,
 				862B91E92175CD520051F60D /* PresentFlowLayout.m */,
 				862B91EB2175D5C30051F60D /* PreCell.h */,
 				862B91EC2175D5C30051F60D /* PreCell.m */,
+				86AE6FFA2182B23000695804 /* AddNormalCell.h */,
+				86AE6FFB2182B23000695804 /* AddNormalCell.m */,
+				86AE6FF7218155BF00695804 /* LJPtModel.h */,
+				86AE6FF8218155BF00695804 /* LJPtModel.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -644,9 +664,12 @@
 				862B91ED2175D5C30051F60D /* PreCell.m in Sources */,
 				863D943B215A3C7A00FBBC5E /* MineViewController.m in Sources */,
 				863D9469215B365E00FBBC5E /* NSString+CZHash.m in Sources */,
+				86AE6FFC2182B23000695804 /* AddNormalCell.m in Sources */,
 				862B91E12174804F0051F60D /* LJDisPlayViewController.m in Sources */,
+				86AE6FF9218155BF00695804 /* LJPtModel.m in Sources */,
 				86D054CD216C8354001CC57F /* LJMeiRefreshView.m in Sources */,
 				863D946A215B365E00FBBC5E /* NSAttributedString+CZAdditon.m in Sources */,
+				86AE6FF62180172A00695804 /* CollectionHeaderView.m in Sources */,
 				86D054A9215DF8FB001CC57F /* UIView+Extension.m in Sources */,
 				863D941B215A0DA800FBBC5E /* main.m in Sources */,
 				863D940D215A0DA500FBBC5E /* AppDelegate.m in Sources */,
@@ -659,6 +682,7 @@
 				863D9466215B365E00FBBC5E /* UIButton+CZAddition.m in Sources */,
 				86D054AC215E0976001CC57F /* LJFlowLayout.m in Sources */,
 				86279D8E2179786600EB464E /* LJShopModel.m in Sources */,
+				86AE6FFF2182E6EE00695804 /* CollectionSpecialView.m in Sources */,
 				862B91F9217715B70051F60D /* TestPFlowLayout.m in Sources */,
 				863D942F215A3B5C00FBBC5E /* BaseViewController.m in Sources */,
 				863D9441215B1CFE00FBBC5E /* NavigationController.m in Sources */,

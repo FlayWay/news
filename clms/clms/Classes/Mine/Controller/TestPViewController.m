@@ -128,7 +128,17 @@
 }
 
 - (CGFloat)columnCountInWaterflowLayout:(TestPFlowLayout *)waterflowLayout {
-    return 4;
+    return 2;
+}
+
+- (CGFloat)columnMarginInWaterflowLayout:(TestPFlowLayout *)waterflowLayout {
+    
+    return 20;
+}
+
+- (CGFloat)rowMarginInWaterflowLayout:(TestPFlowLayout *)waterflowLayout {
+    
+    return 20;
 }
 
 

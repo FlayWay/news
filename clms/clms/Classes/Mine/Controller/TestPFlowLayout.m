@@ -21,10 +21,10 @@ static const UIEdgeInsets LJDefaultEdgeMargin = {10, 10, 10, 10};
 // 存放所有列的最大Y值
 @property (nonatomic, strong) NSMutableArray *columnHeights;
 
+
 @end
 
 @implementation TestPFlowLayout
-
 
 #pragma mark - 常见数据处理
 - (CGFloat)rowMargin
@@ -67,7 +67,6 @@ static const UIEdgeInsets LJDefaultEdgeMargin = {10, 10, 10, 10};
 
 - (NSMutableArray *)attrsArr {
     if (!_attrsArr) {
-        
         _attrsArr = [NSMutableArray array];
     }
     return _attrsArr;
