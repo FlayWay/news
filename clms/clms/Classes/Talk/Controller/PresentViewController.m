@@ -106,6 +106,8 @@ static CGFloat itemWith = 80;
                 break;
             case UIGestureRecognizerStateChanged:
             {
+
+
                 [self.collectionView updateInteractiveMovementTargetPosition:[gesture locationInView:gesture.view]];
                 
             }
@@ -313,22 +315,29 @@ static CGFloat itemWith = 80;
             [self.headerView.editBtn setTitle:@"完成" forState:UIControlStateNormal];
             
         }else {
+            
             [self.dataArr1 addObject:self.dataArr[indexPath.item]];
             [self.dataArr removeObjectAtIndex:indexPath.item];
             
         }
     }else if (indexPath.section == 1){
         
-        [self.dataArr addObject:self.dataArr1[indexPath.item]];
+        LJPtModel *model = self.dataArr1[indexPath.item];
+        model.isEditor = YES;
+        [self.dataArr addObject:model];
         [self.dataArr1 removeObjectAtIndex:indexPath.item];
         
     }else if (indexPath.section == 2) {
-        
-        [self.dataArr addObject:self.dataArr2[indexPath.item]];
+        LJPtModel *model = self.dataArr2[indexPath.item];
+        model.isEditor = YES;
+        [self.dataArr addObject:model];
         [self.dataArr2 removeObjectAtIndex:indexPath.item];
+        
     }
     
-    [self.collectionView reloadData];
+//    [self.collectionView reloadData];
+    
+   
 
 }
 
@@ -352,6 +361,29 @@ static CGFloat itemWith = 80;
     NSString *str = self.dataArr[sourceIndexPath.item];
     [self.dataArr removeObjectAtIndex:sourceIndexPath.item];
     [self.dataArr insertObject:str atIndex:destinationIndexPath.item];
+}
+
+-(NSIndexPath *)collectionView:(UICollectionView *)collectionView targetIndexPathForMoveFromItemAtIndexPath:(NSIndexPath *)originalIndexPath toProposedIndexPath:(NSIndexPath *)proposedIndexPath {
+    
+    /* 两个indexpath参数, 分别代表源位置, 和将要移动的目的位置*/
+    //-1 是为了不让最后一个可以交换位置
+    if (proposedIndexPath.section) {
+        
+        return originalIndexPath;
+    }
+    if (proposedIndexPath.item == 1 ){
+        //初始位置
+        return originalIndexPath;
+    } else {
+        //-1 是为了不让最后一个可以交换位置
+        if (originalIndexPath.item == 1) {
+            return originalIndexPath;
+        }
+        //      移动后的位置
+        return proposedIndexPath;
+    }
+
+    
 }
 
 @end
