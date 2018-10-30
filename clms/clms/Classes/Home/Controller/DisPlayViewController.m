@@ -140,10 +140,10 @@
         _contentScrollView.delegate = self;
         _contentScrollView.dataSource = self;
         _contentScrollView.scrollsToTop = NO;
-        
         [_contentScrollView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
         _contentScrollView.backgroundColor = self.view.backgroundColor;
         [self.contentView insertSubview:collectionView belowSubview:self.titleScrollView];
+       
     }
     
     return _contentScrollView;
@@ -158,6 +158,14 @@
         [self setupAllTitles];
         [self setupStartColor];
         [self setupEndColor];
+        
+        if (@available(iOS 11.0,*)) {
+        
+             self.contentScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+            }else {
+        
+             self.automaticallyAdjustsScrollViewInsets = false;
+        }
         
     }
 }
@@ -261,6 +269,7 @@
     CGFloat contentScrollY = CGRectGetMaxY(self.titleScrollView.frame);
     CGFloat contentScrollH = _contentView.height - contentScrollY;
     self.contentScrollView.frame = CGRectMake(0, contentScrollY, self.view.width, contentScrollH);
+    self.contentScrollView.backgroundColor = [UIColor brownColor];
     
 }
 
@@ -389,14 +398,18 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor redColor];
+    
     // 移除子控件
 //    [cell.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     // 添加控制器
     TableViewController *vc = self.childViewControllers[indexPath.row];
     vc.view.frame = CGRectMake(0,0, self.contentScrollView.width, self.contentScrollView.height);
-    vc.tableView.contentInset = UIEdgeInsetsMake(0, 0, CGRectGetHeight(self.titleScrollView.frame)+NavBarHeight, 0);
+    vc.view.backgroundColor = [UIColor blueColor];
+    vc.tableView.contentInset = UIEdgeInsetsMake(0, 0, CGRectGetHeight(self.titleScrollView.frame)+NavBarHeight + HOME_INDICATOR_HEIGHT, 0);
     [cell.contentView addSubview:vc.view];
+
     return cell;
 }
 

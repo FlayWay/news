@@ -40,6 +40,7 @@
         
         TableViewController *vc = [[TableViewController alloc]init];
         vc.title = obj;
+        vc.navigationBar.hidden = YES;
         [self addChildViewController:vc];
     }];
 }

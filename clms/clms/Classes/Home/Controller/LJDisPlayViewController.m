@@ -12,7 +12,6 @@
 #import "TableViewController.h"
 
 
-
 @interface LJDisPlayViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate>
 
 /// 标题宽度
@@ -162,6 +161,7 @@
         
         [_contentScrollView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
         _contentScrollView.backgroundColor = self.view.backgroundColor;
+//        _contentScrollView.backgroundColor = [UIColor redColor];
         [self.contentView insertSubview:collectionView belowSubview:self.titleScrollView];
     }
     
@@ -177,6 +177,12 @@
         [self setupAllTitles];
         [self setupStartColor];
         [self setupEndColor];
+        
+        if (@available(iOS 11.0,*)) {
+            self.contentScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }else {
+            self.automaticallyAdjustsScrollViewInsets = false;
+        } 
         
     }
 }
@@ -196,7 +202,7 @@
     NSUInteger count = self.childViewControllers.count;
     
     // 设定标题frame
-    CGFloat labelW = self.titleWidth;
+    CGFloat labelW = 0;
     CGFloat labelH = YZTitleScrollViewH;
     CGFloat labelX = 0;
     CGFloat labelY = 0;

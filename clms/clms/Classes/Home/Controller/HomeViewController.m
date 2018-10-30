@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor brownColor];
+//    self.view.backgroundColor = [UIColor brownColor];
     self.navItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"下一步" style:UIBarButtonItemStylePlain target:self action:@selector(nextAction)];
 
 }
@@ -28,6 +28,5 @@
     
     [self.navigationController pushViewController:[ChildViewController new] animated:YES];
 }
-
 
 @end

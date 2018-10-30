@@ -13,9 +13,7 @@
 
 @property (nonatomic, strong) NavigationBar *navigationBar;
 @property (nonatomic, strong) UINavigationItem *navItem;
-//@property (nonatomic, strong) UITableView *tableView;
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+
 
 @end
+

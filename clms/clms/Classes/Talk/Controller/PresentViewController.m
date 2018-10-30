@@ -100,7 +100,12 @@ static CGFloat itemWith = 80;
                 
                 NSIndexPath *selectIndexPath = [self.collectionView indexPathForItemAtPoint:[gesture locationInView:self.collectionView]];
                 
-                [self.collectionView beginInteractiveMovementForItemAtIndexPath:selectIndexPath];
+                if (selectIndexPath != nil) {
+                
+                    [self.collectionView beginInteractiveMovementForItemAtIndexPath:selectIndexPath];
+                    
+                }
+                
                 
             }
                 break;
@@ -283,7 +288,6 @@ static CGFloat itemWith = 80;
         if (self.dataArr1.count == 0) {
             return  CGSizeMake(0, 0);
         }else {
-        
             return CGSizeMake(self.view.bounds.size.width, 60);
         }
         
@@ -306,7 +310,6 @@ static CGFloat itemWith = 80;
     if (indexPath.section == 0) {
         
         if ([self.headerView.editBtn.titleLabel.text isEqualToString:@"编辑"]) {
-            
             
             [self.dataArr enumerateObjectsUsingBlock:^(LJPtModel * model, NSUInteger idx, BOOL * _Nonnull stop) {
                 
@@ -335,7 +338,7 @@ static CGFloat itemWith = 80;
         
     }
     
-//    [self.collectionView reloadData];
+    [self.collectionView reloadData];
     
    
 
@@ -382,8 +385,14 @@ static CGFloat itemWith = 80;
         //      移动后的位置
         return proposedIndexPath;
     }
+}
 
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
     
 }
+
 
 @end

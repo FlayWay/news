@@ -20,7 +20,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
     [self setupChildConrollers];
 }
 
@@ -37,6 +36,7 @@
     [self.titlesArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         TableViewController *vc = [[TableViewController alloc]init];
+        vc.navigationBar.hidden = YES;
         vc.title = obj;
         [self addChildViewController:vc];
     }];

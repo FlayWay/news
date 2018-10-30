@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseTableViewController.h"
 
-@interface TableViewController : UIViewController
+@interface TableViewController : BaseTableViewController
 
-@property (nonatomic, strong) UITableView *tableView;
 
 @end
