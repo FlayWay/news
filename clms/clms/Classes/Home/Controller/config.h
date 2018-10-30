@@ -24,4 +24,30 @@ static CGFloat const YZTitleTransformScale = 1.3;
 
 #import "UIView+Extension.h"
 
+
+// 是否是留海屏 系列手机（X XS XSMax XR）
+static inline BOOL isIPhoneXSeries(){
+    BOOL iPhoneXSeries = NO;
+    if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
+        return iPhoneXSeries;
+    }
+    
+    if (@available(iOS 11.0, *)) {
+        UIWindow * mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        if (mainWindow.safeAreaInsets.bottom > 0.0) {
+            iPhoneXSeries = YES;
+        }
+    }
+    return iPhoneXSeries;
+}
+
+static inline CGFloat STATUSH() {
+    if (isIPhoneXSeries()) {
+        return 44.0; // iPhoneX
+    } else {
+        return 20.0;
+    }
+}
+
+
 #endif /* config_h */

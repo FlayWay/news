@@ -161,7 +161,6 @@
         
         [_contentScrollView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
         _contentScrollView.backgroundColor = self.view.backgroundColor;
-//        _contentScrollView.backgroundColor = [UIColor redColor];
         [self.contentView insertSubview:collectionView belowSubview:self.titleScrollView];
     }
     
@@ -182,7 +181,7 @@
             self.contentScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }else {
             self.automaticallyAdjustsScrollViewInsets = false;
-        } 
+        }
         
     }
 }
@@ -235,8 +234,6 @@
     UILabel *lastLabel = self.titleLabels.lastObject;
     _titleScrollView.contentSize = CGSizeMake(CGRectGetMaxX(lastLabel.frame), 0);
     _titleScrollView.showsHorizontalScrollIndicator = NO;
-    
-    
 }
 
 #pragma mark -- 计算标题宽度
