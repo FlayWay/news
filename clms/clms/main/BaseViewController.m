@@ -57,40 +57,4 @@
     
 }
 
-//- (void)setupTableView {
-//    self.tableView = [[UITableView alloc]initWithFrame:UIScreen.mainScreen.bounds style:UITableViewStylePlain];
-//    self.tableView.delegate = self;
-//    self.tableView.dataSource = self;
-//    if (@available(iOS 11.0,*)) {
-//        
-//        UITableView.appearance.estimatedRowHeight = 0;
-//        UITableView.appearance.estimatedSectionFooterHeight = 0;
-//        UITableView.appearance.estimatedSectionHeaderHeight = 0;
-//        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//        
-//    }else {
-//        
-//        self.automaticallyAdjustsScrollViewInsets = false;
-//    }
-//    
-//    CGFloat bottom = self.tabBarController.tabBar.bounds.size.height;
-//    if ([self isKindOfClass:[HomeViewController class]]) {
-//        
-//        self.tableView.contentInset = UIEdgeInsetsMake(NavBarHeight+44, 0, bottom, 0);
-//    }else {
-//        self.tableView.contentInset = UIEdgeInsetsMake(NavBarHeight, 0, bottom, 0);
-//    }
-//    [self.view insertSubview:self.tableView belowSubview:self.navigationBar];
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//
-//    return [UITableViewCell new];
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//
-//    return 0;
-//}
-
 @end

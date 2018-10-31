@@ -85,7 +85,7 @@
         
         UIScrollView *titleScrollView = [[UIScrollView alloc]init];
         titleScrollView.scrollsToTop = NO;
-        titleScrollView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.7];
+        titleScrollView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [self.contentView addSubview:titleScrollView];
         _titleScrollView = titleScrollView;
     }

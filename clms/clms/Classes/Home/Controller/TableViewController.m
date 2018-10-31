@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "config.h"
 
 static NSString *cellId = @"cellid";
 @interface TableViewController ()
@@ -20,9 +21,16 @@ static NSString *cellId = @"cellid";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:LJDisplayViewClickOrScrollDidFinshNote object:self];
+    
+}
+
+- (void)dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
 }
 
 - (void)loadData {
@@ -38,7 +46,7 @@ static NSString *cellId = @"cellid";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"第%ld行",indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"第%ld行 --------%@",indexPath.row,self.title];
     return cell;
 }
 

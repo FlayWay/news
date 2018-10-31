@@ -40,5 +40,4 @@
 #import <YYModel.h>
 #import <MJRefresh.h>
 
-
 #endif /* PrefixHeader_pch */

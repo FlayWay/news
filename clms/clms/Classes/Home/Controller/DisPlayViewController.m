@@ -83,7 +83,7 @@
         
         UIScrollView *titleScrollView = [[UIScrollView alloc]init];
         titleScrollView.scrollsToTop = NO;
-        titleScrollView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.7];
+        titleScrollView.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [self.contentView addSubview:titleScrollView];
         _titleScrollView = titleScrollView;
     }
@@ -282,7 +282,17 @@
     // 获取tag
     NSInteger i = label.tag;
     [self selectedLabel:label];
+    
+    // 添加控制器
+    UIViewController *vc = self.childViewControllers[i];
+    // 判断控制器的view有没有加载，没有加载，加载完在发送通知
+    if (vc.view) {
 
+        // 点击标题发出通知
+//        [[NSNotificationCenter defaultCenter] postNotificationName:LJDisplayViewClickOrScrollDidFinshNote object:vc];
+
+    }
+    
     // 滚动视图
     CGFloat offsetX = i * UIScreen.mainScreen.bounds.size.width;
     [self.contentScrollView setContentOffset:CGPointMake(offsetX, 0) animated:false];
@@ -406,7 +416,6 @@
     // 添加控制器
     TableViewController *vc = self.childViewControllers[indexPath.row];
     vc.view.frame = CGRectMake(0,0, self.contentScrollView.width, self.contentScrollView.height);
-    vc.view.backgroundColor = [UIColor blueColor];
     vc.tableView.contentInset = UIEdgeInsetsMake(0, 0, CGRectGetHeight(self.titleScrollView.frame)+NavBarHeight + HOME_INDICATOR_HEIGHT, 0);
     [cell.contentView addSubview:vc.view];
 
@@ -446,6 +455,10 @@
     // 选中标题
     [self selectedLabel:self.titleLabels[i]];
     
+    // 取出对应控制器发出通知
+    UIViewController *vc = self.childViewControllers[i];
+    // 点击标题发出通知
+//    [[NSNotificationCenter defaultCenter] postNotificationName:LJDisplayViewClickOrScrollDidFinshNote object:vc];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

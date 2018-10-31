@@ -8,6 +8,7 @@
 
 #import "ChildViewController.h"
 #import "TableViewController.h"
+#import "config.h"
 
 
 @interface ChildViewController ()
@@ -21,6 +22,13 @@
     // Do any additional setup after loading the view.
     
     [self setupChildConrollers];
+    
+    
+}
+
+- (void)test {
+    
+    NSLog(@"----%s--------",__func__);
 }
 
 

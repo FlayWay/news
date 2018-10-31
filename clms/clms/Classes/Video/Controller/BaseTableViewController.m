@@ -35,8 +35,6 @@
     [super viewDidLoad];
     
     [self.view insertSubview:self.tableView belowSubview:self.navigationBar];
-    
-//    self.tableView.contentInset = UIEdgeInsetsMake(NavBarHeight, 0, 0, 0);
     self.tableView.contentInset = UIEdgeInsetsMake(NavBarHeight, 0, HOME_INDICATOR_HEIGHT, 0);
 
     if (@available(iOS 11.0,*)) {
@@ -53,7 +51,6 @@
     [self.refreshControl addTarget:self action:@selector(loadData) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
     
-
 }
 
 - (void)loadData {

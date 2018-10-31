@@ -9,9 +9,9 @@
 #import "LJRefreshControl.h"
 #import "LJRefreshView.h"
 
-static CGFloat LJRefreshOffset = 60;
+//static CGFloat LJRefreshOffset = 60;
 //static CGFloat LJRefreshOffset = 126;
-
+static CGFloat LJRefreshOffset =60;
 @interface LJRefreshControl ()
 
 
@@ -183,6 +183,7 @@ static CGFloat LJRefreshOffset = 60;
     self.refreshView.parentViewHeight = LJRefreshOffset;
     UIEdgeInsets inset = self.scrollView.contentInset;
     inset.top += LJRefreshOffset;
+    NSLog(@"%@",NSStringFromUIEdgeInsets(inset));
     self.scrollView.contentInset = inset;
 }
 
