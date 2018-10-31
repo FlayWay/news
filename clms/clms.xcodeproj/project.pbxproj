@@ -53,6 +53,7 @@
 		86AE6FF9218155BF00695804 /* LJPtModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6FF8218155BF00695804 /* LJPtModel.m */; };
 		86AE6FFC2182B23000695804 /* AddNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6FFB2182B23000695804 /* AddNormalCell.m */; };
 		86AE6FFF2182E6EE00695804 /* CollectionSpecialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6FFE2182E6EE00695804 /* CollectionSpecialView.m */; };
+		86C20D2F21897D9700DF030D /* LJCommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C20D2E21897D9700DF030D /* LJCommendViewController.m */; };
 		86D054A9215DF8FB001CC57F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D054A7215DF8FB001CC57F /* UIView+Extension.m */; };
 		86D054AC215E0976001CC57F /* LJFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D054AB215E0976001CC57F /* LJFlowLayout.m */; };
 		86D054B621609DA5001CC57F /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D054B521609DA5001CC57F /* TableViewController.m */; };
@@ -158,6 +159,8 @@
 		86AE6FFB2182B23000695804 /* AddNormalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddNormalCell.m; sourceTree = "<group>"; };
 		86AE6FFD2182E6EE00695804 /* CollectionSpecialView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionSpecialView.h; sourceTree = "<group>"; };
 		86AE6FFE2182E6EE00695804 /* CollectionSpecialView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionSpecialView.m; sourceTree = "<group>"; };
+		86C20D2D21897D9700DF030D /* LJCommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJCommendViewController.h; sourceTree = "<group>"; };
+		86C20D2E21897D9700DF030D /* LJCommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJCommendViewController.m; sourceTree = "<group>"; };
 		86D054A7215DF8FB001CC57F /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		86D054A8215DF8FB001CC57F /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		86D054AA215E0976001CC57F /* LJFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJFlowLayout.h; sourceTree = "<group>"; };
@@ -401,6 +404,7 @@
 		863D9476215B39A100FBBC5E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				86C20D2C21897D8B00DF030D /* Commend */,
 				86D054A8215DF8FB001CC57F /* UIView+Extension.h */,
 				86D054A7215DF8FB001CC57F /* UIView+Extension.m */,
 				863D9430215A3C1900FBBC5E /* HomeViewController.h */,
@@ -474,6 +478,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		86C20D2C21897D8B00DF030D /* Commend */ = {
+			isa = PBXGroup;
+			children = (
+				86C20D2D21897D9700DF030D /* LJCommendViewController.h */,
+				86C20D2E21897D9700DF030D /* LJCommendViewController.m */,
+			);
+			path = Commend;
 			sourceTree = "<group>";
 		};
 		86D054BD216B0A29001CC57F /* Tool */ = {
@@ -668,6 +681,7 @@
 				862B91E12174804F0051F60D /* LJDisPlayViewController.m in Sources */,
 				86AE6FF9218155BF00695804 /* LJPtModel.m in Sources */,
 				86D054CD216C8354001CC57F /* LJMeiRefreshView.m in Sources */,
+				86C20D2F21897D9700DF030D /* LJCommendViewController.m in Sources */,
 				863D946A215B365E00FBBC5E /* NSAttributedString+CZAdditon.m in Sources */,
 				86AE6FF62180172A00695804 /* CollectionHeaderView.m in Sources */,
 				86D054A9215DF8FB001CC57F /* UIView+Extension.m in Sources */,

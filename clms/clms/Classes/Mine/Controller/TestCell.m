@@ -45,7 +45,7 @@
 
 - (void)setShop:(LJShopModel *)shop {
     
-    [self.bImage sd_setImageWithURL:[NSURL URLWithString:shop.img]];
+    [self.bImage sd_setImageWithURL:[NSURL URLWithString:shop.img] placeholderImage:nil options:SDWebImageAllowInvalidSSLCertificates];
     self.nameLab.text = shop.price;
 }
 

@@ -42,8 +42,8 @@
 - (void)setupUI {
     
     [self setNavigationBar];
-//    self.view.backgroundColor = [UIColor cz_randomColor];
-//    [self setupTableView];
+    self.view.backgroundColor = [UIColor cz_randomColor];
+    
 }
 
 - (void)setNavigationBar {
