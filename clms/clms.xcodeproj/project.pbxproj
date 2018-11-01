@@ -54,7 +54,8 @@
 		86AE6FFC2182B23000695804 /* AddNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6FFB2182B23000695804 /* AddNormalCell.m */; };
 		86AE6FFF2182E6EE00695804 /* CollectionSpecialView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6FFE2182E6EE00695804 /* CollectionSpecialView.m */; };
 		86C20D2F21897D9700DF030D /* LJCommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C20D2E21897D9700DF030D /* LJCommendViewController.m */; };
-		86D054A9215DF8FB001CC57F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D054A7215DF8FB001CC57F /* UIView+Extension.m */; };
+		86C20D362189AAAF00DF030D /* ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C20D352189AAAF00DF030D /* ZXPUnicode.m */; };
+		86C20D3C218A9EB600DF030D /* LJLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C20D3B218A9EB600DF030D /* LJLeftModel.m */; };
 		86D054AC215E0976001CC57F /* LJFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D054AB215E0976001CC57F /* LJFlowLayout.m */; };
 		86D054B621609DA5001CC57F /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D054B521609DA5001CC57F /* TableViewController.m */; };
 		86D054B9216AF78F001CC57F /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D054B8216AF78F001CC57F /* BaseTableViewController.m */; };
@@ -65,6 +66,10 @@
 		86D054C8216C7DE9001CC57F /* LJHumanRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D054C7216C7DE9001CC57F /* LJHumanRefreshView.xib */; };
 		86D054CA216C80A6001CC57F /* LJMeiRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D054C9216C80A6001CC57F /* LJMeiRefreshView.xib */; };
 		86D054CD216C8354001CC57F /* LJMeiRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D054CC216C8354001CC57F /* LJMeiRefreshView.m */; };
+		86F112D1218AD67300191133 /* LJRightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F112D0218AD67300191133 /* LJRightModel.m */; };
+		86F112D4218ADD0C00191133 /* LeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F112D3218ADD0C00191133 /* LeftCell.m */; };
+		86F112D7218ADD2000191133 /* RightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F112D6218ADD2000191133 /* RightCell.m */; };
+		86F112E4218AE68100191133 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F112E2218AE68100191133 /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,8 +166,10 @@
 		86AE6FFE2182E6EE00695804 /* CollectionSpecialView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionSpecialView.m; sourceTree = "<group>"; };
 		86C20D2D21897D9700DF030D /* LJCommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJCommendViewController.h; sourceTree = "<group>"; };
 		86C20D2E21897D9700DF030D /* LJCommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJCommendViewController.m; sourceTree = "<group>"; };
-		86D054A7215DF8FB001CC57F /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
-		86D054A8215DF8FB001CC57F /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		86C20D342189AAAF00DF030D /* ZXPUnicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPUnicode.h; sourceTree = "<group>"; };
+		86C20D352189AAAF00DF030D /* ZXPUnicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXPUnicode.m; sourceTree = "<group>"; };
+		86C20D3A218A9EB600DF030D /* LJLeftModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJLeftModel.h; sourceTree = "<group>"; };
+		86C20D3B218A9EB600DF030D /* LJLeftModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJLeftModel.m; sourceTree = "<group>"; };
 		86D054AA215E0976001CC57F /* LJFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJFlowLayout.h; sourceTree = "<group>"; };
 		86D054AB215E0976001CC57F /* LJFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJFlowLayout.m; sourceTree = "<group>"; };
 		86D054B421609DA5001CC57F /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -180,6 +187,14 @@
 		86D054C9216C80A6001CC57F /* LJMeiRefreshView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJMeiRefreshView.xib; sourceTree = "<group>"; };
 		86D054CB216C8354001CC57F /* LJMeiRefreshView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJMeiRefreshView.h; sourceTree = "<group>"; };
 		86D054CC216C8354001CC57F /* LJMeiRefreshView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJMeiRefreshView.m; sourceTree = "<group>"; };
+		86F112CF218AD67300191133 /* LJRightModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJRightModel.h; sourceTree = "<group>"; };
+		86F112D0218AD67300191133 /* LJRightModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJRightModel.m; sourceTree = "<group>"; };
+		86F112D2218ADD0C00191133 /* LeftCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftCell.h; sourceTree = "<group>"; };
+		86F112D3218ADD0C00191133 /* LeftCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftCell.m; sourceTree = "<group>"; };
+		86F112D5218ADD2000191133 /* RightCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightCell.h; sourceTree = "<group>"; };
+		86F112D6218ADD2000191133 /* RightCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RightCell.m; sourceTree = "<group>"; };
+		86F112E2218AE68100191133 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		86F112E3218AE68100191133 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		A72BA8A2D28EF7AFE5FD0A95 /* libPods-clms.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-clms.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEBD22530439F952621D6CA /* Pods-clms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clms.debug.xcconfig"; path = "Pods/Target Support Files/Pods-clms/Pods-clms.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -263,6 +278,8 @@
 				863D945D215B365E00FBBC5E /* NSAttributedString+CZAdditon.m */,
 				863D945E215B365E00FBBC5E /* NSArray+Log.m */,
 				863D945F215B365E00FBBC5E /* NSString+CZPath.h */,
+				86F112E3218AE68100191133 /* UIView+Extension.h */,
+				86F112E2218AE68100191133 /* UIView+Extension.m */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -296,6 +313,8 @@
 		863D946E215B395500FBBC5E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				86F112DB218AE35400191133 /* extentsion */,
+				86C20D332189AAAF00DF030D /* ZXPUnicode */,
 				863D9472215B398200FBBC5E /* Mine */,
 				863D9471215B397700FBBC5E /* Talk */,
 				863D9470215B396F00FBBC5E /* Video */,
@@ -405,8 +424,6 @@
 			isa = PBXGroup;
 			children = (
 				86C20D2C21897D8B00DF030D /* Commend */,
-				86D054A8215DF8FB001CC57F /* UIView+Extension.h */,
-				86D054A7215DF8FB001CC57F /* UIView+Extension.m */,
 				863D9430215A3C1900FBBC5E /* HomeViewController.h */,
 				863D9431215A3C1900FBBC5E /* HomeViewController.m */,
 				863D9485215CB31D00FBBC5E /* DisPlayViewController.h */,
@@ -485,8 +502,25 @@
 			children = (
 				86C20D2D21897D9700DF030D /* LJCommendViewController.h */,
 				86C20D2E21897D9700DF030D /* LJCommendViewController.m */,
+				86C20D3A218A9EB600DF030D /* LJLeftModel.h */,
+				86C20D3B218A9EB600DF030D /* LJLeftModel.m */,
+				86F112CF218AD67300191133 /* LJRightModel.h */,
+				86F112D0218AD67300191133 /* LJRightModel.m */,
+				86F112D2218ADD0C00191133 /* LeftCell.h */,
+				86F112D3218ADD0C00191133 /* LeftCell.m */,
+				86F112D5218ADD2000191133 /* RightCell.h */,
+				86F112D6218ADD2000191133 /* RightCell.m */,
 			);
 			path = Commend;
+			sourceTree = "<group>";
+		};
+		86C20D332189AAAF00DF030D /* ZXPUnicode */ = {
+			isa = PBXGroup;
+			children = (
+				86C20D342189AAAF00DF030D /* ZXPUnicode.h */,
+				86C20D352189AAAF00DF030D /* ZXPUnicode.m */,
+			);
+			path = ZXPUnicode;
 			sourceTree = "<group>";
 		};
 		86D054BD216B0A29001CC57F /* Tool */ = {
@@ -513,6 +547,13 @@
 				86D054C2216B438A001CC57F /* LJRefreshView.xib */,
 			);
 			path = LJRefreshControl;
+			sourceTree = "<group>";
+		};
+		86F112DB218AE35400191133 /* extentsion */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = extentsion;
 			sourceTree = "<group>";
 		};
 		DBA79460EB8E02B0C48B4D3B /* Pods */ = {
@@ -680,15 +721,17 @@
 				86AE6FFC2182B23000695804 /* AddNormalCell.m in Sources */,
 				862B91E12174804F0051F60D /* LJDisPlayViewController.m in Sources */,
 				86AE6FF9218155BF00695804 /* LJPtModel.m in Sources */,
+				86F112D1218AD67300191133 /* LJRightModel.m in Sources */,
 				86D054CD216C8354001CC57F /* LJMeiRefreshView.m in Sources */,
 				86C20D2F21897D9700DF030D /* LJCommendViewController.m in Sources */,
 				863D946A215B365E00FBBC5E /* NSAttributedString+CZAdditon.m in Sources */,
 				86AE6FF62180172A00695804 /* CollectionHeaderView.m in Sources */,
-				86D054A9215DF8FB001CC57F /* UIView+Extension.m in Sources */,
 				863D941B215A0DA800FBBC5E /* main.m in Sources */,
 				863D940D215A0DA500FBBC5E /* AppDelegate.m in Sources */,
 				86D054BC216AFA62001CC57F /* TestViewController.m in Sources */,
+				86C20D362189AAAF00DF030D /* ZXPUnicode.m in Sources */,
 				86D054B621609DA5001CC57F /* TableViewController.m in Sources */,
+				86F112D4218ADD0C00191133 /* LeftCell.m in Sources */,
 				863D943E215A3CC500FBBC5E /* MainTabBarController.m in Sources */,
 				863D9444215B1FE100FBBC5E /* NavigationBar.m in Sources */,
 				862B91E72175B7EE0051F60D /* PresentViewController.m in Sources */,
@@ -698,6 +741,7 @@
 				86279D8E2179786600EB464E /* LJShopModel.m in Sources */,
 				86AE6FFF2182E6EE00695804 /* CollectionSpecialView.m in Sources */,
 				862B91F9217715B70051F60D /* TestPFlowLayout.m in Sources */,
+				86F112E4218AE68100191133 /* UIView+Extension.m in Sources */,
 				863D942F215A3B5C00FBBC5E /* BaseViewController.m in Sources */,
 				863D9441215B1CFE00FBBC5E /* NavigationController.m in Sources */,
 				863D9462215B365E00FBBC5E /* UIScreen+CZAddition.m in Sources */,
@@ -705,10 +749,12 @@
 				86D054C6216B471B001CC57F /* LJRefreshView.m in Sources */,
 				863D9465215B365E00FBBC5E /* NSString+CZPath.m in Sources */,
 				863D9464215B365E00FBBC5E /* NSString+CZBase64.m in Sources */,
+				86F112D7218ADD2000191133 /* RightCell.m in Sources */,
 				863D9460215B365E00FBBC5E /* UIColor+CZAddition.m in Sources */,
 				862B91F6217714FD0051F60D /* TestPViewController.m in Sources */,
 				863D9468215B365E00FBBC5E /* UIViewController+CZAddition.m in Sources */,
 				863D946B215B365E00FBBC5E /* NSArray+Log.m in Sources */,
+				86C20D3C218A9EB600DF030D /* LJLeftModel.m in Sources */,
 				862B91E4217483570051F60D /* TalkListViewController.m in Sources */,
 				862B91DE2174659D0051F60D /* LJWangRefreshView.m in Sources */,
 				863D9432215A3C1900FBBC5E /* HomeViewController.m in Sources */,

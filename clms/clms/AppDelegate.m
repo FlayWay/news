@@ -23,9 +23,22 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [self setTableViewAdaption];
     self.window.rootViewController = [MainTabBarController new];
     
     return YES;
+}
+
+- (void)setTableViewAdaption {
+    
+    if (@available(iOS 11.0,*)) {
+        
+        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        UITableView.appearance.estimatedRowHeight = 0;
+        UITableView.appearance.estimatedSectionFooterHeight = 0;
+        UITableView.appearance.estimatedSectionHeaderHeight = 0;
+    }
 }
 
 
