@@ -11,6 +11,13 @@
 
 @implementation LJLeftModel
 
+- (NSMutableArray *)users {
+    if (!_users) {
+        _users = [NSMutableArray array];
+    }
+    return _users;
+}
+
 + (NSDictionary *)modelCustomPropertyMapper {
     
     return @{

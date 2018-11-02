@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LJRightModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RightCell : UITableViewCell
+
+@property (nonatomic, strong) LJRightModel *model;
 
 @end
 

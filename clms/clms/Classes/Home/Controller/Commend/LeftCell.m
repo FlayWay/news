@@ -25,6 +25,7 @@
         self.lineView = [[UIView alloc]init];
         self.lineView.backgroundColor = [UIColor redColor];
         [self.contentView insertSubview:self.lineView atIndex:0];
+        self.textLabel.font = [UIFont systemFontOfSize:14];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;

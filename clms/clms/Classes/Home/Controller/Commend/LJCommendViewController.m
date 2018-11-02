@@ -13,7 +13,7 @@
 #import "RightCell.h"
 
 
-static CGFloat leftTableWith = 100;
+static CGFloat leftTableWith = 90;
 static NSString *leftTable = @"leftTable";
 static NSString *rightTable = @"rightTable";
 
@@ -31,10 +31,26 @@ static NSString *rightTable = @"rightTable";
  */
 @property (nonatomic, strong) NSArray *categories;
 
+@property (nonatomic, strong) NSDictionary *params;
+
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
 
 @end
 
 @implementation LJCommendViewController
+
+/**
+ 1.重新发送数据  判断有没有数据，有数据不请求，无数据请求
+ 2.目前发送一条数据
+ 3.网络慢带来的细节问题
+ */
+
+- (AFHTTPSessionManager *)manager {
+    if (!_manager) {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return _manager;
+}
 
 - (UITableView *)leftTableView {
     if (!_leftTableView) {
@@ -52,6 +68,7 @@ static NSString *rightTable = @"rightTable";
     if (!_rightTableView) {
         
         _rightTableView = [[UITableView alloc]initWithFrame:CGRectMake(leftTableWith, 0, UIScreen.mainScreen.bounds.size.width - leftTableWith, UIScreen.mainScreen.bounds.size.height) style:UITableViewStylePlain];
+        _rightTableView.rowHeight = 60;
         _rightTableView.showsVerticalScrollIndicator = NO;
         _rightTableView.backgroundColor = [UIColor redColor];
         _rightTableView.delegate = self;
@@ -86,7 +103,6 @@ static NSString *rightTable = @"rightTable";
 // 加载新数据
 - (void)loadNewUsers {
     
-    
     LJLeftModel *model = self.categories[self.leftTableView.indexPathForSelectedRow.row];
     model.currentPage = 1;
     // 请求参数
@@ -95,21 +111,82 @@ static NSString *rightTable = @"rightTable";
     params[@"c"] = @"subscribe";
     params[@"category_id"] = model.categoryId;
     params[@"page"] = @(model.currentPage);
-    
+    self.params = params;
     // 请求右侧数据
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        NSLog(@"responseObject===%@",responseObject);
+
         [self.rightTableView.mj_header endRefreshing];
-        NSLog(@"responseObject====%@",responseObject);
+        NSArray *users = [NSArray yy_modelArrayWithClass:[LJRightModel class] json:responseObject[@"list"]];
+        // 清除旧数据
+        [model.users removeAllObjects];
+        // 添加到当前类别对应的用户数组中
+        [model.users addObjectsFromArray:users];
+        
+        // 总数
+        model.total = [responseObject[@"total"] integerValue];
+        
+        if (self.params != params) {
+            
+            return;
+        }
+        [self.rightTableView reloadData];
+        [self checkFooterState];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     
+        if (self.params != params) {
+            
+            return ;
+        }
+        [SVProgressHUD showErrorWithStatus:@"请求数据失败"];
+        [self.rightTableView.mj_header endRefreshing];
+        
     }];
 }
 // 加载更多数据
 - (void)loadMoreUsers {
     
+    LJLeftModel *model = self.categories[self.leftTableView.indexPathForSelectedRow.row];
+    model.currentPage = 1;
+    // 请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"subscribe";
+    params[@"category_id"] = model.categoryId;
+    params[@"page"] = @(++model.currentPage);
     
+    // 请求右侧数据
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+       
+        NSLog(@"responseObject===%@",responseObject);
+        
+        [self.rightTableView.mj_header endRefreshing];
+        NSArray *users = [NSArray yy_modelArrayWithClass:[LJRightModel class] json:responseObject[@"list"]];
+        // 添加到当前类别对应的用户数组中
+        [model.users addObjectsFromArray:users];
+        
+        // 总数
+        model.total = [responseObject[@"total"] integerValue];
+        if (self.params != params) {
+            
+            return;
+        }
+        
+        [self.rightTableView reloadData];
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        if (self.params != params) {
+            
+            return ;
+        }
+        [SVProgressHUD showErrorWithStatus:@"请求数据失败"];
+        [self.rightTableView.mj_header endRefreshing];
+        
+    }];
 }
 
 - (void)loadCategory {
@@ -121,10 +198,11 @@ static NSString *rightTable = @"rightTable";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setValue:@"category" forKey:@"a"];
     [params setValue:@"subscribe" forKey:@"c"];
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        NSLog(@"responseObject1===%@",responseObject);
         [SVProgressHUD dismiss];
         NSArray *responArr = responseObject[@"list"];
         self.categories = [NSArray yy_modelArrayWithClass:[LJLeftModel class] json:responArr];
@@ -146,18 +224,17 @@ static NSString *rightTable = @"rightTable";
     [self.view insertSubview:self.rightTableView belowSubview:self.navigationBar];
     
     [self.leftTableView registerClass:[LeftCell class] forCellReuseIdentifier:leftTable];
-    [self.rightTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:rightTable];
+    [self.rightTableView registerClass:[RightCell class] forCellReuseIdentifier:rightTable];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if (tableView == _leftTableView) {
-        
         return self.categories.count;
-        
     }else {
-     
-        return 20;
+        [self checkFooterState];
+        LJLeftModel *model = self.categories[self.leftTableView.indexPathForSelectedRow.row];
+        return model.users.count;
     }
 }
 
@@ -170,12 +247,47 @@ static NSString *rightTable = @"rightTable";
         cell.model = model;
         return cell;
     }else {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:rightTable forIndexPath:indexPath];
-        cell.textLabel.text = [NSString stringWithFormat:@"第%ld行",indexPath.row];
+        RightCell *cell = [tableView dequeueReusableCellWithIdentifier:rightTable forIndexPath:indexPath];
+        LJLeftModel *model = self.categories[self.leftTableView.indexPathForSelectedRow.row];
+        cell.model = model.users[indexPath.row];
         return cell;
     }
     return nil;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    // 点击频繁是 刚点击生活 又点击音乐  会触发两个请求，造成数据异常  所以取消当前操作
+    [self.rightTableView.mj_header endRefreshing];
+    [self.rightTableView.mj_footer endRefreshing];
+    
+    LJLeftModel *model = self.categories[self.leftTableView.indexPathForSelectedRow.row];
+    if (model.users.count) {
+        [self.rightTableView reloadData];
+    }else {
+        [self.rightTableView reloadData];
+        [self.rightTableView.mj_header beginRefreshing];
+    }
+}
+
+- (void)checkFooterState {
+    
+    LJLeftModel *model = self.categories[self.leftTableView.indexPathForSelectedRow.row];
+    self.rightTableView.mj_footer.hidden = (model.count == 0);
+    
+    if (model.users.count == model.total) {
+
+        // 全部加载完成
+        [self.rightTableView.mj_footer endRefreshingWithNoMoreData];
+    }else {
+        
+        [self.rightTableView.mj_footer endRefreshing];
+    }
+}
+
+- (void)dealloc {
+    
+    [self.manager.operationQueue cancelAllOperations];
 }
 
 @end

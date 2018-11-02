@@ -20,6 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 当前页码 */
 @property (nonatomic, assign) NSInteger currentPage;
+
+@property (nonatomic, strong) NSMutableArray *users;
+
+@property (nonatomic, assign) NSInteger total;
+
 @end
 
 NS_ASSUME_NONNULL_END
