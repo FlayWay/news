@@ -423,6 +423,7 @@
 		863D9476215B39A100FBBC5E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				86F112E5218C298200191133 /* gouwuche */,
 				86C20D2C21897D8B00DF030D /* Commend */,
 				863D9430215A3C1900FBBC5E /* HomeViewController.h */,
 				863D9431215A3C1900FBBC5E /* HomeViewController.m */,
@@ -554,6 +555,13 @@
 			children = (
 			);
 			path = extentsion;
+			sourceTree = "<group>";
+		};
+		86F112E5218C298200191133 /* gouwuche */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = gouwuche;
 			sourceTree = "<group>";
 		};
 		DBA79460EB8E02B0C48B4D3B /* Pods */ = {

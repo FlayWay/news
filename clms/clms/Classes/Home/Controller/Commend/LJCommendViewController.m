@@ -114,9 +114,6 @@ static NSString *rightTable = @"rightTable";
     self.params = params;
     // 请求右侧数据
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        NSLog(@"responseObject===%@",responseObject);
-
         [self.rightTableView.mj_header endRefreshing];
         NSArray *users = [NSArray yy_modelArrayWithClass:[LJRightModel class] json:responseObject[@"list"]];
         // 清除旧数据
@@ -159,9 +156,7 @@ static NSString *rightTable = @"rightTable";
     
     // 请求右侧数据
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-       
-        NSLog(@"responseObject===%@",responseObject);
-        
+               
         [self.rightTableView.mj_header endRefreshing];
         NSArray *users = [NSArray yy_modelArrayWithClass:[LJRightModel class] json:responseObject[@"list"]];
         // 添加到当前类别对应的用户数组中
@@ -279,7 +274,6 @@ static NSString *rightTable = @"rightTable";
         // 全部加载完成
         [self.rightTableView.mj_footer endRefreshingWithNoMoreData];
     }else {
-        
         [self.rightTableView.mj_footer endRefreshing];
     }
 }
