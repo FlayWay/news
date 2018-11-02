@@ -11,6 +11,7 @@
 @interface LeftCell ()
 
 @property (nonatomic, strong) UIView *lineView;
+@property (nonatomic, strong) UIView *seperatLineView;
 
 @end
 
@@ -27,6 +28,10 @@
         [self.contentView insertSubview:self.lineView atIndex:0];
         self.textLabel.font = [UIFont systemFontOfSize:14];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        self.seperatLineView = [[UIView alloc]init];
+        self.seperatLineView.backgroundColor = [UIColor darkGrayColor];
+        [self.contentView addSubview:self.seperatLineView];
     }
     return self;
 }
@@ -48,6 +53,12 @@
     CGFloat lineViewH = self.contentView.height - 2 * lineViewY;
     CGFloat lineViewX = 0;
     self.lineView.frame = CGRectMake(lineViewX, lineViewY, lineViewW, lineViewH);
+    
+    CGFloat seperatLineViewX = 5;
+    CGFloat seperatLineVieH = 1;
+    CGFloat seperatLineViewY = self.contentView.height - seperatLineVieH;
+    CGFloat seperatLineViewW = self.contentView.width - 2 * seperatLineViewX;
+    self.seperatLineView.frame = CGRectMake(seperatLineViewX, seperatLineViewY, seperatLineViewW, seperatLineVieH);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

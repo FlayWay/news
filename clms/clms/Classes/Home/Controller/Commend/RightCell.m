@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UILabel *titleLab;
 @property (nonatomic, strong) UILabel *subTitleLab;
 @property (nonatomic, strong) UIButton *addBtn;
+@property (nonatomic, strong) UIView *seperatLineView;
 
 
 @end
@@ -50,6 +51,13 @@
         [self.addBtn setTitle:@"关注" forState:UIControlStateNormal];
         [self.contentView addSubview:self.addBtn];
         
+        
+        self.seperatLineView = [[UIView alloc]init];
+        self.seperatLineView.backgroundColor = [UIColor darkGrayColor];
+        [self.contentView addSubview:self.seperatLineView];
+        
+       
+        
     }
     return self;
 }
@@ -81,6 +89,12 @@
     CGFloat addBtnH = 30;
     CGFloat addBtnY = (self.contentView.height - addBtnH) / 2;
     self.addBtn.frame = CGRectMake(addBtnX, addBtnY, addBtnW, addBtnH);
+    
+    CGFloat seperatLineViewX = 5;
+    CGFloat seperatLineVieH = 1;
+    CGFloat seperatLineViewY = self.contentView.height - seperatLineVieH;
+    CGFloat seperatLineViewW = self.contentView.width - 2 * seperatLineViewX;
+    self.seperatLineView.frame = CGRectMake(seperatLineViewX, seperatLineViewY, seperatLineViewW, seperatLineVieH);
 }
 
 - (void)setModel:(LJRightModel *)model {

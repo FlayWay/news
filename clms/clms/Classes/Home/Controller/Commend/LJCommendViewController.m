@@ -56,7 +56,7 @@ static NSString *rightTable = @"rightTable";
     if (!_leftTableView) {
         
         _leftTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0,leftTableWith, UIScreen.mainScreen.bounds.size.height) style:UITableViewStylePlain];
-        _leftTableView.backgroundColor = [UIColor brownColor];
+        _leftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _leftTableView.showsVerticalScrollIndicator = NO;
         _leftTableView.dataSource = self;
         _leftTableView.delegate = self;
@@ -68,9 +68,9 @@ static NSString *rightTable = @"rightTable";
     if (!_rightTableView) {
         
         _rightTableView = [[UITableView alloc]initWithFrame:CGRectMake(leftTableWith, 0, UIScreen.mainScreen.bounds.size.width - leftTableWith, UIScreen.mainScreen.bounds.size.height) style:UITableViewStylePlain];
+        _rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _rightTableView.rowHeight = 60;
         _rightTableView.showsVerticalScrollIndicator = NO;
-        _rightTableView.backgroundColor = [UIColor redColor];
         _rightTableView.delegate = self;
         _rightTableView.dataSource = self;
     }
@@ -276,7 +276,6 @@ static NSString *rightTable = @"rightTable";
     self.rightTableView.mj_footer.hidden = (model.count == 0);
     
     if (model.users.count == model.total) {
-
         // 全部加载完成
         [self.rightTableView.mj_footer endRefreshingWithNoMoreData];
     }else {
